@@ -10,5 +10,7 @@ cube.addEventListener("mousemove", (event) => {
     let perspectiveOriginX = centerXPoint-currentX;
     let perspectiveOriginY = centerYPoint-currentY;
     
-    cube.style.perspectiveOrigin = `${perspectiveOriginX*5}px ${perspectiveOriginY*5}px`;
+    //cube.style.perspectiveOrigin = `${perspectiveOriginX*5}px ${perspectiveOriginY*5}px`;
+
+    cube.style.transform = `rotateX(${perspectiveOriginX/2}deg) rotateY(${perspectiveOriginY/2}deg)`;
 })

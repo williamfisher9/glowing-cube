@@ -24,9 +24,6 @@ body {
     align-items: center;
 
     position: relative;
-
-    perspective: 3000px;
-    transform-style: preserve-3d;
 }
 
 /* if size is not giver, it will appear as a dot in the middle of the screen */
@@ -38,10 +35,10 @@ body {
     justify-content: center;
     align-items: center;
 
-    perspective: 6000px;
+    perspective: 100000;
     perspective-origin: left;
 
-    border: 2px solid #aaaaaa;
+    transform-style: preserve-3d;
 }
 
 .side {
@@ -55,6 +52,8 @@ body {
     position: absolute;
 
     transition: 0.5s;
+
+    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
 }
 
 .side > h1 {
@@ -67,30 +66,28 @@ body {
 .face{
     transform: translateZ(100px);
     z-index: 1;
-    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
 }
 
 .back{
-    transform: translateZ(-100px);
-    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
+    transform: translateZ(-100px) rotateY(180deg);
 }
 
 .right{
     transform: translateX(100px) rotateY(90deg);
-    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
 }
 
 .left{
     transform: translateX(-100px) rotateY(-90deg);
-    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
 }
 
 .up{
     transform: translateY(-100px) rotateX(90deg);
+    background-image: none;
     background-color: #000;
 }
 
 .down{
     transform: translateY(100px) rotateX(-90deg);
+    background-image: none;
     background-color: rgb(104, 223, 45);
 }
