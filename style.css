@@ -1,0 +1,96 @@
+:root {
+    --width: 100svw;
+    --height: 100svh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: var(--width);
+    height: var(--height);
+    background-color: #333;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    perspective: 3000px;
+    transform-style: preserve-3d;
+}
+
+/* if size is not giver, it will appear as a dot in the middle of the screen */
+.cube {
+    width: 600px;
+    height: 600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 6000px;
+    perspective-origin: left;
+
+    border: 2px solid #aaaaaa;
+}
+
+.side {
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    transition: 0.5s;
+}
+
+.side > h1 {
+    text-transform: uppercase;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+}
+
+.face{
+    transform: translateZ(100px);
+    z-index: 1;
+    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
+}
+
+.back{
+    transform: translateZ(-100px);
+    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
+}
+
+.right{
+    transform: translateX(100px) rotateY(90deg);
+    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
+}
+
+.left{
+    transform: translateX(-100px) rotateY(-90deg);
+    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
+}
+
+.up{
+    transform: translateY(-100px) rotateX(90deg);
+    background-color: #000;
+}
+
+.down{
+    transform: translateY(100px) rotateX(-90deg);
+    background-color: rgb(104, 223, 45);
+}
