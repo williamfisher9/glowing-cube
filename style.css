@@ -28,8 +28,8 @@ body {
 
 /* if size is not giver, it will appear as a dot in the middle of the screen */
 .cube {
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
 
     display: flex;
     justify-content: center;
@@ -53,7 +53,7 @@ body {
 
     transition: 0.5s;
 
-    background-image: linear-gradient(#000 10%, rgb(104, 223, 45));
+    background-image: linear-gradient(#000 10%, rgb(85, 163, 47));
 }
 
 .side > h1 {
@@ -90,4 +90,22 @@ body {
     transform: translateY(100px) rotateX(-90deg);
     background-image: none;
     background-color: rgb(104, 223, 45);
+
+    transform-style: preserve-3d;
+
+    /*filter: drop-shadow(0 0 90px crimson);*/
+}
+
+.down::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(50px);
+    background-image: none;
+    background-color: rgb(104, 223, 45);
+    filter: blur(20px);
+    box-shadow: 0 0 200px rgb(104, 223, 45), 0 0 300px rgb(104, 223, 45), 0 0 400px rgb(104, 223, 45), 0 0 500px rgb(104, 223, 45);
 }
